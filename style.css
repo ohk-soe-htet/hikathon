@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+:root {
+    --shrimp: hsl(354, 72%, 57%);
+    --paleShrimp: hsl(354, 72%, 67%);
+    --clr-800: hsl(0, 0%, 20%);
+    --clr-700: hsl(0, 0%, 25%);
+    --clr-600: hsl(0, 0%, 40%);
+    --mountainBlue: hsl(208, 40%, 35%);
+    --paleWhite: hsl(0, 0%, 80%);
+}
+
+section {
+    min-height: 100vh;
+}
+
+section:first-child {
+    background: url(./images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+header {
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: row;
+}
+
+header>* {
+    height: 70px;
+    line-height: 70px;
+}
+
+header .logo {
+    font-size: 2rem;
+    color: var(--shrimp);
+    margin-right: auto;
+}
+
+header nav {
+    display: flex;
+    font-size: 1.75rem;
+}
+
+header nav li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 0 0 3em;
+}
+
+header nav li a {
+    text-decoration: none;
+    color: var(--paleShrimp);
+    transition: all .3s linear;
+}
+
+header nav li a:hover,
+header nav li a:focus {
+    cursor: pointer;
+    color: var(--shrimp);
+}
+
+.mainSite {
+    display: flex;
+    height: calc(100vh - 70px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainSite h1 {
+    font-size: 3.5rem;
+    color: var(--clr-800);
+}
+
+.mainSite p {
+    font-size: 1.25rem;
+    color: var(--clr-700);
+    font-weight: 100;
+}
+
+.mainSite a {
+    margin-top: 2.25rem;
+    margin-bottom: 8rem;
+    display: block;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--mountainBlue);
+    padding: 0.3em 1.2em;
+    border: 2px solid var(--mountainBlue);
+    border-radius: 1em;
+    transition: all .25s linear;
+}
+
+.mainSite a:hover,
+.mainSite a:focus {
+    background: var(--mountainBlue);
+    color: var(--paleWhite);
+}
+
+.service h2 {
+    text-align: center;
+    padding: 4.5rem 0 2rem;
+    font-size: 2rem;
+    letter-spacing: .125rem;
+    color: var(--clr-700);
+}
+
+.service>p {
+    font-size: 1.3rem;
+    color: var(--clr-600);
+    padding: 0 15vw;
+    text-align: center;
+}
+
+.separator {
+    margin: 30px auto;
+    width: 250px;
+    height: 2px;
+    background: var(--mountainBlue);
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 1rem 20vw;
+    justify-content: space-between;
+}
+
+.features .card {
+    width: 45%;
+    border: 2px solid var(--mountainBlue);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.features #lmore {
+    border: 2px dashed var(--shrimp);
+    transform: scale(0.9);
+}
+
+.card img {
+    width: 50%;
+}
+
+#lmore img {
+    width: 30%;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: var(--clr-700);
+    margin-top: 20px;
+}
+
+#lmore h3 a {
+    text-decoration: none;
+    color: var(--clr-700);
+    transition: all .2s linear;
+}
+
+#lmore h3 a:hover {
+    text-decoration: underline;
+    color: var(--paleShrimp);
+}
+
+.card p {
+    font-size: 1.25rem;
+    color: var(--clr-600);
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer {
+    background: var(--mountainBlue);
+    height: 60px;
+    font-size: 1.25rem;
+    color: var(--paleWhite);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1080px) {
+    header nav li {
+        padding: 0 0 0 1rem;
+    }
+    .features {
+        flex-direction: column;
+        padding: 0 15vw;
+        justify-content: center;
+        align-items: center;
+    }
+    .features .card {
+        width: 70%;
+    }
+    .features #lmore {
+        transform: scale(1);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    header {
+        padding: 0;
+        flex-direction: column;
+    }
+    header .logo {
+        width: 100%;
+        text-align: center;
+    }
+    header nav {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    header nav li {
+        padding: 0;
+    }
+    .features {
+        padding: 0 10vw;
+    }
+    .features .card {
+        width: 100%;
+    }
+}
